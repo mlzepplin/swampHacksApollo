@@ -1,0 +1,11 @@
+{
+  "name": "Apollo",
+  "version": "1.0.0",
+  "main": "src/index.js",
+  "author": "David Nagi",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "ws": "^4.0.0"
+  }
+}
