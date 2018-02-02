@@ -3,8 +3,7 @@ import sys
 while True:
     line = sys.stdin.readline()
     main()
-    sys.stdout.flush();
-
+    sys.stdout.flush()
 
 
 def main(data):

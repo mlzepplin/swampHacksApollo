@@ -31,10 +31,10 @@ const wss = new WebSocket.Server({ port: 8080 });
 console.log('Done\n');
 
 console.log('Starting Worker...');
-const worker = spawn('python', ['src/worker.py'])
-worker.stdout.on('data', data => {
-    console.log('Worker|>',data.toString());
-});
+const worker = spawn('python', ['src/Predict2.py'])
+//worker.stdout.on('data', data => {
+//    console.log('Worker|>',data.toString());
+//});
 console.log('Done\n');
 
 console.log('\nAll Systems Go! Ready for incoming connections...');
@@ -57,17 +57,17 @@ wss.on('connection', ws => {
         id++;
 
         console.log('Sending work to worker...');
-        worker.stdin.write(message+"\n");
+        worker.stdin.write(message + "\n\r<EOF");
         console.log("Done\n")
 
-        ws.send('69')
+        // ws.send('69')
 
         // console.log('Starting Image Write...');
         // fs.writeFile(`./images/${id}.jpg`, message, err => {
         //     console.log("Done")
-            
+
         // })
     });
 
-   
+
 });
